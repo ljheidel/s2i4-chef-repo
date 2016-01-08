@@ -1,4 +1,4 @@
-# s2i4-ops-cookbook
+# s2i4-base-cookbook
 
 TODO: Enter the cookbook description here.
 
@@ -16,7 +16,7 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['s2i4-ops']['bacon']</tt></td>
+    <td><tt>['s2i4-base']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -25,14 +25,14 @@ TODO: List your supported platforms.
 
 ## Usage
 
-### s2i4-ops::default
+### s2i4-base::default
 
-Include `s2i4-ops` in your node's `run_list`:
+Include `s2i4-base` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[s2i4-ops::default]"
+    "recipe[s2i4-base::default]"
   ]
 }
 ```

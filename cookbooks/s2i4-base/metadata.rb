@@ -1,0 +1,7 @@
+name             's2i4-base'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures s2i4-base'
+long_description 'Installs/Configures s2i4-base'
+version          '0.1.0'
