@@ -1,3 +1,12 @@
 source "https://supermarket.chef.io"
 
 metadata
+
+cookbook "sudo"
+cookbook "curl"
+cookbook "sar"
+cookbook "ntp"
+cookbook "htop"
+cookbook "fail2ban"
+cookbook "ufw"
+cookbook "openssh"

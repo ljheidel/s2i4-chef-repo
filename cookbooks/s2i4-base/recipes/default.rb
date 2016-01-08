@@ -6,3 +6,9 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+group 'sshusers' do
+	action :create
+	members 'ljheidel'
+	append true
+	gid 200
+end

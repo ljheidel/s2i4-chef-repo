@@ -1,0 +1,41 @@
+{
+    "name":"s2i4-base",
+    "default_attributes":{
+        "authorization": {
+          "sudo": {
+            "groups":[ "sudo" ],
+            "users":[],
+            "passwordless": "true"
+          }
+        },
+        "ntp": {
+           "servers":["0.pool.ntp.org", "1.pool.ntp.org", "2.pool.ntp.org", "3.pool.ntp.org"]
+        },
+        "openssh": {
+           "server": {
+               "password_authentication": "no",
+               "allow_groups": [ "sshusers" ],
+               "permit_root_login": "no"
+           },
+           "client": {
+               "hash_known_hosts": "yes"
+           }
+        }
+    },
+    "json_class":"Chef::Role",
+    "env_run_lists":{},
+    "run_list":[
+        "recipe[sudo]",
+        "recipe[curl]",
+        "recipe[sar]",
+	"recipe[ntp]",
+	"recipe[htop]",
+	"recipe[fail2ban]",
+	"recipe[openssh]",
+	"recipe[s2i4-ops]",
+	"recipe[s2i4-base]"
+    ],
+    "description":"s2i4 Management Infrastructure Base",
+    "chef_type":"role",
+    "override_attributes":{}
+}
