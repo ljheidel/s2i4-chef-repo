@@ -1,20 +1,17 @@
 {
     "name":"zabbix",
     "default_attributes":{
-	"apache": {
-		"listen_ports": "10080"
-	}
     },
     "json_class":"Chef::Role",
     "env_run_lists":{},
     "run_list":[
-	"recipe[database::mysql]",
-	"recipe[mysql::server]",
-        "recipe[zabbix]",
-	"recipe[zabbix::database]",
-	"recipe[zabbix::server]"
+	"recipe[zabbix_lwrp::agent]",
+	"recipe[zabbix_lwrp::default]",
+	"recipe[zabbix_lwrp::database]",
+	"recipe[zabbix_lwrp::server]",
+	"recipe[zabbix_lwrp::web]",
     ],
-    "description":"Zabbix Cookbook",
+    "description":"Zabbix Role",
     "chef_type":"role",
     "override_attributes":{}
 }

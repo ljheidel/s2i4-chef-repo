@@ -8,7 +8,6 @@
 #
 group 'sshusers' do
 	action :create
-	members 'ljheidel'
 	append true
 	gid 200
 end
