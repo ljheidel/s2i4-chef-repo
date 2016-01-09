@@ -40,10 +40,10 @@ else
     action :install
   end
 
-  # leave this on by default
   firewall_rule 'ssh' do
     port 22
     action :create
+    only_if { node['firewall']['ssh_fucking_stupid'] }
   end
 
   node['firewall']['rules'].each do |rule_mash|
