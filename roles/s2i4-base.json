@@ -20,6 +20,11 @@
            "client": {
                "hash_known_hosts": "yes"
            }
+        },
+        "zabbix": {
+          "agent":  {
+            "serverhost": "zabbix.s2i4.us"
+          }
         }
     },
     "json_class":"Chef::Role",
@@ -32,8 +37,11 @@
 	"recipe[htop]",
 	"recipe[fail2ban]",
 	"recipe[openssh]",
-	"recipe[s2i4-ops]",
-	"recipe[s2i4-base]"
+        "recipe[firewall]",
+        "recipe[ufw]",
+        "recipe[ufw::custom]",
+	"recipe[s2i4-base]",
+	"recipe[s2i4-ops]"
     ],
     "description":"s2i4 Management Infrastructure Base",
     "chef_type":"role",
