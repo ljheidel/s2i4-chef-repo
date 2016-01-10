@@ -16,13 +16,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+user "ljheidel" do
+  comment "Luke Heidelberger"
+  uid 500
+  gid 100
+  home '/home/ljheidel'
+  shell '/bin/bash'
+end
+
+group "sshusers" do
+  action :modify
+  members 'ljheidel'
+  append true
+end
+
+group "sudo" do
+  action :modify
+  members 'ljheidel'
+  append true
+end
+
 remote_directory "/home/ljheidel" do
     files_mode "0600"
     mode "0700"
     owner "ljheidel"
-    group "ljheidel"
+    group "staff"
     files_owner "ljheidel"
-    files_group "ljheidel"
+    files_group "staff"
     source "ljheidel"
     action :create_if_missing
 end

@@ -25,7 +25,40 @@
           "agent":  {
             "serverhost": "zabbix.s2i4.us"
           }
-        }
+        },
+        "firewall": {
+          "rules": [
+            { "Allow zabbix connections on port 10050": 
+              {  "port": "10050",
+                 "source": "159.203.235.97",
+                 "protocol": "tcp"
+              }
+            },
+            { "Allow zabbix connections on port 10051": 
+              {  "port": "10051",
+                 "source": "159.203.235.97",
+                 "protocol": "tcp"
+              }
+            },
+            { "Allow SSH connections from s01-unmanaged": 
+              {  "port": "22",
+                 "source": "159.203.235.97",
+                 "protocol": "tcp"
+              }
+            }
+          ],
+        "allow_by_hostname": [
+          { "hostname": "ljheidel.ddns.net",
+            "port": "22"
+          },
+          { "hostname": "ljheidel.ddns.net",
+            "port": "80"
+          },
+          { "hostname": "ljheidel.ddns.net",
+            "port": "443"
+          }
+        ]
+      }
     },
     "json_class":"Chef::Role",
     "env_run_lists":{},

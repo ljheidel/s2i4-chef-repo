@@ -1,6 +1,22 @@
 {
     "name":"zabbix",
     "default_attributes":{
+        "firewall": {
+          "rules": [
+            { "Allow connections on port 80": 
+              {  "port": "80",
+                 "source": "0.0.0.0/0",
+                 "protocol": "tcp"
+              }
+            },
+            { "Allow connections on port 443": 
+              {  "port": "443",
+                 "source": "0.0.0.0/0",
+                 "protocol": "tcp"
+              }
+            }
+          ]
+        }
     },
     "json_class":"Chef::Role",
     "env_run_lists":{},
@@ -9,7 +25,7 @@
 	"recipe[zabbix_lwrp::default]",
 	"recipe[zabbix_lwrp::database]",
 	"recipe[zabbix_lwrp::server]",
-	"recipe[zabbix_lwrp::web]",
+	"recipe[zabbix_lwrp::web]"
     ],
     "description":"Zabbix Role",
     "chef_type":"role",
