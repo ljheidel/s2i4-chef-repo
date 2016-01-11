@@ -3,6 +3,18 @@
     "default_attributes":{
         "firewall": {
           "rules": [
+            { "Allow connections on port 10050": 
+              {  "port": "10050",
+                 "source": "0.0.0.0/0",
+                 "protocol": "tcp"
+              }
+            },
+            { "Allow connections on port 10051": 
+              {  "port": "10051",
+                 "source": "0.0.0.0/0",
+                 "protocol": "tcp"
+              }
+            },
             { "Allow connections on port 80": 
               {  "port": "80",
                  "source": "0.0.0.0/0",
