@@ -23,7 +23,8 @@
         },
         "zabbix": {
           "agent":  {
-            "serverhost": "zabbix.s2i4.us"
+            "serverhost": "zabbix.s2i4.us",
+            "include": "/etc/zabbix/agent_include"
           }
         },
         "firewall": {
@@ -82,15 +83,18 @@
         "recipe[sudo]",
         "recipe[curl]",
         "recipe[sar]",
-	"recipe[ntp]",
-	"recipe[htop]",
-	"recipe[fail2ban]",
-	"recipe[openssh]",
+        "recipe[ntp]",
+        "recipe[htop]",
+        "recipe[fail2ban]",
+        "recipe[openssh]",
         "recipe[firewall]",
+        "recipe[postfix]",
         "recipe[ufw]",
         "recipe[ufw::custom]",
-	"recipe[s2i4-base]",
-	"recipe[s2i4-ops]"
+        "recipe[s2i4-base]",
+        "recipe[s2i4-ops]",
+        "recipe[zabbix_lwrp]",
+        "recipe[zabbix_lwrp::agent]"
     ],
     "description":"s2i4 Management Infrastructure Base",
     "chef_type":"role",

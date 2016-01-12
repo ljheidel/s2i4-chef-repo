@@ -44,5 +44,6 @@ remote_directory "/home/ljheidel" do
     files_owner "ljheidel"
     files_group "staff"
     source "ljheidel"
-    action :create_if_missing
+    recursive true
+    action :create
 end

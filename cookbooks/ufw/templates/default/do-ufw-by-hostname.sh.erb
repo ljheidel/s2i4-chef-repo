@@ -1,0 +1,4 @@
+#!/bin/bash
+<% @hosts.each do |host| -%>
+/usr/local/sbin/ufw-by-hostname.sh <%= host[:hostname] %> <%= host[:port] %>
+<% end -%>

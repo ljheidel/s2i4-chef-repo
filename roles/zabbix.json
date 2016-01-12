@@ -33,11 +33,13 @@
     "json_class":"Chef::Role",
     "env_run_lists":{},
     "run_list":[
+        "recipe[zabbix_lwrp]",
 	"recipe[zabbix_lwrp::agent]",
 	"recipe[zabbix_lwrp::default]",
 	"recipe[zabbix_lwrp::database]",
 	"recipe[zabbix_lwrp::server]",
-	"recipe[zabbix_lwrp::web]"
+	"recipe[zabbix_lwrp::web]",
+        "recipe[fping]"
     ],
     "description":"Zabbix Role",
     "chef_type":"role",

@@ -1,0 +1,28 @@
+{
+    "name":"chef",
+    "default_attributes":{
+        "firewall": {
+          "rules": [
+            { "Allow connections on port 80": 
+              {  "port": "80",
+                 "source": "0.0.0.0/0",
+                 "protocol": "tcp"
+              }
+            },
+            { "Allow connections on port 443": 
+              {  "port": "443",
+                 "source": "0.0.0.0/0",
+                 "protocol": "tcp"
+              }
+            }
+          ]
+        }
+    },
+    "json_class":"Chef::Role",
+    "env_run_lists":{},
+    "run_list":[
+    ],
+    "description":"Chef Role",
+    "chef_type":"role",
+    "override_attributes":{}
+}
