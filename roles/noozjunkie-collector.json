@@ -1,0 +1,13 @@
+{
+    "name":"noozjunkie-collector",
+    "default_attributes":{
+    },
+    "json_class":"Chef::Role",
+    "env_run_lists":{},
+    "run_list":[
+      "recipe[noozjunkie]"
+    ],
+    "description":"Noozjunkie Collector Role",
+    "chef_type":"role",
+    "override_attributes":{}
+}

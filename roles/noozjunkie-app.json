@@ -1,0 +1,13 @@
+{
+    "name":"noozjunkie-app",
+    "default_attributes":{
+    },
+    "json_class":"Chef::Role",
+    "env_run_lists":{},
+    "run_list":[
+      "recipe[noozjunkie]"
+    ],
+    "description":"Noozjunkie Application Server Role",
+    "chef_type":"role",
+    "override_attributes":{}
+}
