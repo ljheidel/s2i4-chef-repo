@@ -1,8 +1,8 @@
 set nu
 set laststatus=2
 set statusline+=%F\ %l\:%c
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 " F5 is a shortcut for inserting a timestamp
 nnoremap <F5> "=strftime("%c")<CR>P
