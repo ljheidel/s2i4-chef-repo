@@ -1,4 +1,4 @@
 function nodedelete {
-  knife -y node delete ${1}
-  knife -y client delete ${1}
+  knife node delete ${1} -y
+  knife client delete ${1} -y
 }

@@ -6,6 +6,14 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+# include_recipe 'apt'
+
+bash 'update_apt' do
+  code <<-EOH
+    apt-get update
+  EOH
+end
+
 group 'sshusers' do
 	action :create
 	append true
