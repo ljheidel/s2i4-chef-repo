@@ -4,7 +4,7 @@ maintainer_email 'ops@s2i4.us'
 license          'All rights reserved'
 description      'Installs/Configures s2i4-base'
 long_description 'Installs/Configures s2i4-base'
-version          '0.2.11'
+version          '0.2.12'
 
 depends          'sudo'
 depends          'curl'

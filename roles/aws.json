@@ -1,0 +1,17 @@
+{
+    "name":"aws",
+    "default_attributes":{
+      "postfix": {
+        "main": {
+          "relayhost":"s01-unmanaged.s2i4.us" 
+        }
+      }
+    },
+    "json_class":"Chef::Role",
+    "env_run_lists":{},
+    "run_list":[
+    ],
+    "description":"AWS Role",
+    "chef_type":"role",
+    "override_attributes":{}
+}

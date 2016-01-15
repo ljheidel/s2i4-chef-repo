@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-packages=['git', 'python', 'python3-pip', 'libffi-dev', 'libxml2-dev', 'libxslt1-dev', 'python-dev', 'zlib1g-dev' , 'libjpeg-devl', 'libpng12-dev' ]
+packages=['git', 'python', 'python3-pip', 'libffi-dev', 'libxml2-dev', 'libxslt1-dev', 'python-dev', 'zlib1g-dev' , 'libjpeg-dev', 'libpng12-dev' ]
 
 packages.each do |pkg|
   package pkg do

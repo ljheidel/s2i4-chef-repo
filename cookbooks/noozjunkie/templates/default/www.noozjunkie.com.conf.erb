@@ -1,0 +1,64 @@
+<VirtualHost noozjunkie.com:80>
+	ServerName noozjunkie.com
+	ServerAlias www.noozjunkie.com
+
+	ServerAdmin webmaster@noozjunkie.com
+	DocumentRoot /srv/noozjunkie/apache
+
+	<Directory "/srv/noozjunkie/apache">
+		Options Indexes FollowSymLinks
+		AllowOverride None
+		Require all granted
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/noozjunkie.com-error.log
+	CustomLog ${APACHE_LOG_DIR}/noozjunkie.com-access.log combined
+
+	RewriteEngine on
+	RewriteRule ^(.*)$ https://www.noozjunkie.com/$1 [R=302,L]
+
+</VirtualHost>
+<IfModule mod_ssl.c>
+	<VirtualHost noozjunkie.com:443>
+		ServerName noozjunkie.com
+		ServerAlias www.noozjunkie.com
+		ServerAdmin webmaster@noozjunkie.com
+
+		DocumentRoot /srv/noozjunkie/apache
+		<Directory "/srv/noozjunkie/apache">
+			Options All
+			AllowOverride All
+			Require all granted
+		</Directory>
+
+		SSLCertificateFile	/etc/ssl/certs/ssl-cert-snakeoil.pem
+		SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+		ErrorLog ${APACHE_LOG_DIR}/noozjunkie.com-ssl_error.log
+		CustomLog ${APACHE_LOG_DIR}/noozjunkie.com-access.log combined
+		SSLEngine on
+		ServerAdmin webmaster@noozjunkie.com
+		#SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt
+		#SSLCACertificatePath /etc/ssl/certs/
+		#SSLCACertificateFile /etc/apache2/ssl.crt/ca-bundle.crt
+		<FilesMatch "\.(cgi|shtml|phtml|php)$">
+				SSLOptions +StdEnvVars
+		</FilesMatch>
+		<Directory /usr/lib/cgi-bin>
+				SSLOptions +StdEnvVars
+		</Directory>
+		BrowserMatch "MSIE [2-6]" \
+				nokeepalive ssl-unclean-shutdown \
+				downgrade-1.0 force-response-1.0
+		# MSIE 7 and newer should be able to use keepalive
+		BrowserMatch "MSIE [17-9]" ssl-unclean-shutdown
+
+		RewriteEngine on
+
+		RewriteCond %{HTTP_HOST} !^www\.noozjunkie\.com$ [NC]
+		RewriteRule ^(.*)$ https://www.noozjunkie.com/$1 [R=302,L]
+
+		ProxyPass / http://localhost:5001/
+		ProxyPassReverse / http://localhost:5001/
+
+	</VirtualHost>
+</IfModule>

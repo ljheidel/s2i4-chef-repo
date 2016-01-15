@@ -1,0 +1,25 @@
+DEPENDENCIES
+  aws-sdk
+  aws-vpc-nat-instance
+    path: .
+    metadata: true
+  chef-sugar (= 3.0.1)
+  simple_iptables (~> 0.7.1)
+  sysctl (~> 0.6.2)
+
+GRAPH
+  apt (2.4.0)
+  aws-sdk (1.42.0)
+    apt (~> 2.4.0)
+    build-essential (~> 2.0.2)
+  aws-vpc-nat-instance (0.2.7)
+    aws-sdk (>= 0.0.0)
+    chef-sugar (= 3.0.1)
+    simple_iptables (= 0.7.1)
+    sysctl (= 0.6.2)
+  build-essential (2.0.6)
+  chef-sugar (3.0.1)
+  ohai (2.0.4)
+  simple_iptables (0.7.1)
+  sysctl (0.6.2)
+    ohai (>= 0.0.0)
